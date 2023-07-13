@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# shellcheck disable=SC2016
+
+echo 'This plugin installs the Asdf-openssl compiler and tools (asdf-openssl, asdf-opensslgrep, etc).'
+echo
+echo 'The tool will try to install pre-compiled binaries when available for'
+echo 'the version/platform, otherwise Asdf-openssl is built from source.'
+echo
+echo 'Stable binaries:'
+echo '- Linux: x86_64 and x86 only'
+echo '- `asdf install asdf-openssl X.Y.Z` for a specific version'
+echo '- `asdf install asdf-openssl latest:X.Y` for the latest patch release of X.Y'
+echo
+echo 'Unstable binaries:'
+echo '- Linux: x86_64, x86, armv7l, aarch64'
+echo '- macOS: x86_64'
+echo '- `asdf install asdf-openssl ref:devel` for the latest nightly build of github.com/asdf-openssl-lang/Asdf-openssl/tree/devel'
+echo '- `asdf install asdf-openssl ref:version-1-6` for the latest nightly build of github.com/asdf-openssl-lang/Asdf-openssl/tree/version-1-6'
+echo '- `asdf install asdf-openssl ref:version-1-4` for the latest nightly build of github.com/asdf-openssl-lang/Asdf-openssl/tree/version-1-4'
+echo '- etc'
+echo
+echo 'Source builds:'
+echo '- All platforms'
+echo '- `asdf install asdf-openssl ref:<commit-ish>`'
+echo '- `asdf install asdf-openssl ref:vX.Y.Z` to force build for a specific stable version'
+echo

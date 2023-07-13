@@ -1,0 +1,29 @@
+labels: ["feature"]
+body:
+  - type: textarea
+    attributes:
+      label: New Feature
+      description: Short list of what the feature request aims to address?
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Why you want to add these features
+      description: Why do you think this feature is needed? Are there current alternatives?
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Proposal
+      description: How should this feature be implemented? 
+      placeholder: I propose the following...
+    validations:
+      required: false

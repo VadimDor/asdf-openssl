@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -ueo pipefail
+shopt -s dotglob
+
+# shellcheck source=SCRIPTDIR/../lib/utils.bash
+source "$(dirname "${BASH_SOURCE[0]}")/../lib/utils.bash"
+
+echo "asdf-openssl depends on the following packages:"
+asdf_asdf-openssl_list_deps
+echo

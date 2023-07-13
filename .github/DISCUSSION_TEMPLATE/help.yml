@@ -1,0 +1,14 @@
+labels: ["question"]
+body:
+  - type: textarea
+    attributes:
+      label: Summary
+      description: What do you need help with?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: Any code snippets, error messages, or dependency details that may be related? 
+    validations:
+      required: false

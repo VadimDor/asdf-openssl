@@ -1,0 +1,10 @@
+[book]
+title = "asdf-openssl plugin>"
+description = "asdf-openssl plugin Homepage>"
+src = "./docs"
+
+[output.html]
+git-repository-url = "https://github.com/VadimDor/asdf-openssl/"
+edit-url-template = "https://github.com/VadimDor/asdf-openssl/edit/main/{path}"
+additional-css = ["custom.css"]
+theme = "./docs/theme"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "https://github.com/VadimDor/asdf-openssl"
+echo

@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -ueo pipefail
+
+ASDF_BIN="${ASDF_DIR:-$HOME/.asdf}/bin/"
+ASDF_INSTALL_BIN_PATH=$(dirname "$("${ASDF_BIN}/asdf" which asdf-openssl)")
+
+# TODO: check if you really need custom shims below
+
+regenerate() {
+  # After a asdf-openssl operation, regenerate asdf-openssl shims to find new package binaries
+  if "${ASDF_BIN}/asdf" reshim asdf-openssl; then
+    echo "  asdf-openssl: regenerated shims"
+  else
+    echo "  asdf-openssl: failed to regenerate shims"
+    exit 1
+  fi
+  echo
+}
+
+trap 'trap - HUP; SIGNAL=SIGHUP; regenerate; kill -HUP $$' HUP
+trap 'trap - INT; SIGNAL=SIGINT; regenerate; kill -INT $$' INT
+trap 'trap - TERM; SIGNAL=SIGTERM; regenerate; kill -TERM $$' TERM
+
+if "${ASDF_INSTALL_BIN_PATH}/asdf-openssl" "$@"; then
+  case "${1-}" in
+    install | develop | uninstall)
+      regenerate
+      ;;
+  esac
+else
+  exit $?
+fi
